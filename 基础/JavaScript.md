@@ -17,3 +17,65 @@
     console.log(letTest); //输出"test let OK."，内部"{}"中声明的letTest和外部的letTest不是同一个变量
   }
   ```
+
+#### 2、对象创建的几种方式。
+
+  - ①字面量方式：
+  ```
+  let person = {
+    name:"xiaoming",
+    sayName:function(){
+      console.log(this.name);
+    }
+    features:{
+      height:"176cm",
+      weight:"60kg",
+    }
+  }
+  ```
+  
+  - ②Object构造函数创建：
+  ```
+  let person = new Object();
+  person.name = "xiaoming";
+  person.age = 21;
+  ```
+  
+  - ③构造器模式：利用函数作用域使用自定义构造函数模式模仿类。
+  ```
+  function Person(name,age){
+    this.name = name;
+    this.age = age;
+    this.print = function(){
+      console.log(this.name + this.age)
+    };
+  }
+  ```
+  
+  - ④原型模式
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
