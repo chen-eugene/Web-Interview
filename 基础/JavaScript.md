@@ -59,17 +59,30 @@
     };
   }
   ```
-  [new命令的作用，就是执行一个构造函数，并且返回一个对象实例。使用new命令时，它后面的函数调用就不是正常的调用，而是依次执行下面的步骤。](https://juejin.im/entry/584a1c98ac502e006c5d63b8)
-    - a：创建一个空对象，作为将要返回的对象实例。
-    - b：将空对象的原型指向了构造函数的prototype属性。
-    - c：将空对象赋值给构造函数内部的this关键字。
-    - d：开始执行构造函数内部的代码。
-
+  [new命令的作用，就是执行一个构造函数，并且返回一个对象实例。使用new命令时，它后面的函数调用就不是正常的调用，而是依次执行下面的步骤。](https://juejin.im/entry/584a1c98ac502e006c5d63b8)   
+   - a：创建一个空对象，作为将要返回的对象实例。
+   - b：将空对象的原型指向了构造函数的prototype属性。
+   - c：将空对象赋值给构造函数内部的this关键字。
+   - d：开始执行构造函数内部的代码。
+   
+   缺点：每个方法都要在每个实例上重新创建一遍。
   
   - ④原型模式
+  ```
+  function Person(){}
+  
+  Person.prototype.name = "Nicholas";
+  Person.prototype.age = 29;
+  Person.prototype.job = "Software Engineer";
+  Person.prototype.sayName = function(){
+    alert(this.name);
+  };
+  ```
 
 
+#### 4、理解原型对象。
 
+  
 
 
 
