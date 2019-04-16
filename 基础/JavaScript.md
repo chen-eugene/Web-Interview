@@ -20,7 +20,7 @@
 
 #### 2、对象创建的几种方式。
 
-  - ①字面量方式：
+  - ①字面量方式：使用Object构造函数和字面量会产生大量的重复代码。
   ```
   let person = {
     name:"xiaoming",
@@ -34,14 +34,22 @@
   }
   ```
   
-  - ②Object构造函数创建：
+  - ②工厂模式：没有解决对象的识别问题（即怎么知道一个对象的类型）
   ```
-  let person = new Object();
-  person.name = "xiaoming";
-  person.age = 21;
+  function createPerson(name,age,job){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayNamge = function(){
+      alert(this.name);
+    }
+    return o;
+  }
   ```
+
   
-  - ③构造器模式：利用函数作用域使用自定义构造函数模式模仿类。
+  - ③构造器模式：利用函数作用域使用自定义构造函数模式模仿类。构造器模式就是一种变相的工厂模式。
   ```
   function Person(name,age){
     this.name = name;
@@ -51,6 +59,12 @@
     };
   }
   ```
+  [new命令的作用，就是执行一个构造函数，并且返回一个对象实例。使用new命令时，它后面的函数调用就不是正常的调用，而是依次执行下面的步骤。](https://juejin.im/entry/584a1c98ac502e006c5d63b8)
+    - a：创建一个空对象，作为将要返回的对象实例。
+    - b：将空对象的原型指向了构造函数的prototype属性。
+    - c：将空对象赋值给构造函数内部的this关键字。
+    - d：开始执行构造函数内部的代码。
+
   
   - ④原型模式
 
