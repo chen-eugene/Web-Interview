@@ -172,12 +172,57 @@
   当一个函数被当做构造函数来创建实例时，该函数的prototype属性值被作为原型赋值给所有对象实例（也就是设置实例的__proto__属性）
 
   
-#### 5、原型链的缺点和构造函数冒充。
+#### 5、原型链的缺点和对象冒充。
 
+  **所有引用类型默认都继承了Object，这个继承也是通过原型链实现的。**
+  
+  **所有函数的默认原型都是Object的实例，因此默认原型都会包含一个内部指针，指向Object.prototype。**
+  
+  **原型链的问题：**
+  - 属性共享问题：通过原型来实现继承时，原型实际上会变成另一个类型的实例。于是，原先的实例属性也就顺理成章地成了现在的原型属性了。
+  - 在创建子类型的实例时，不能向超类型的构造函数中传递参数。即没有办法在不影响所有对象实例的情况下，给超类型的构造函数传递参数。
 
-
-
-
+  **对象冒充：**
+  ```
+  function SuperType(name){
+    this.name = name;
+    this.colors = ["red","blue","green"];
+  }
+  
+  function SubType(){
+    //继承了SuperType，同时传递了参数
+    SuperType.call(this,"Nicholas");
+  }
+  
+  val instance1 = new SubType();
+  alert(instance.name);    //"Nicholas";
+  instance1.colors.push("black");
+  alert(instance1.colors);    //"red,blue,green,black"
+  
+  var instance2 = new SubType();
+  alert(instance2.colors);    //"red,blue,green"
+  ```
+  **对象冒充无法避免构造函数模式存在的问题，仅仅解决了传参和属性共享问题，但是不能解决函数的复用问题。**
+  
+  **组合继承：指的是将原型链和借用构造函数的技术组合到一块。思路是使用原型链实现对原型属性和方 法的继承，而通过借用构造函数来实现对实例属性的继承。**
+  
+  ```
+  function SuperType(name){
+    this.name = name;
+    this.colors = ["red", "blue", "green"];
+  }
+  
+  SuperType.prototype.sayName = function(){
+    alert(this.name);
+  };
+  
+  function SubType(name, age){
+    //继承属性 SuperType.call(this, name);
+    this.age = age;
+  }
+  
+  ```
+  
 
 
 
