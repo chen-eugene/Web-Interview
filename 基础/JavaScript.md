@@ -67,7 +67,10 @@
    
    缺点：每个方法都要在每个实例上重新创建一遍。
   
-  - ④原型模式
+  - ④ 原型模式
+   - 优点：可以让所有对象实例共享它所包含的属性和方法。
+   - 缺点：所有的实例在默认情况下豆浆取得相同的属性值。
+  
   ```
   function Person(){}
   
@@ -79,16 +82,91 @@
   };
   ```
 
-
-#### 4、理解原型对象和原型链。
-
-  **在JavaScript中，每一个对象都包含一个“[[Prototype]]”内部属性，这个属性指向该对象的远行对象。**
+  - ⑤ 组合使用构造函数模式和原型模式
+   
+  优点：
+  - 构造函数模式用于定义实例属性，而原型模式用于定义方法和共享的属性。
+  - 这种组合模式还支持想构造函数传递参数
   
+  ```
+  function Person(name,age,job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.freinds = ["Shelby","Court"];
+  }
+  
+  Person.prototype = {
+    constructor : Person, //强制指向Person
+    sayName : function(){
+      alert(this.name);
+    }
+  }
+  ```
+  
+  - ⑥ 动态原型模式
+  
+  优点：通过在构造函数中初始化原型（仅在必要的情况下），又保证了同事使用构造函数和原型的优点。
+  
+  ```
+  function Person(name,age,job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    
+    if(typeof this.sayName != "function"){
+      Person.prototype.sayName = function(){
+        alert(this.name);
+      };
+    }
+  }
+  ```
+  
+  - ⑦ 寄生构造函数模式
+  
+  ```
+  fuction Person(name,age,job){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
+      alert(this.name);
+    };
+    return o;
+  }
+  ```
+  
+  - ⑧ 稳妥构造函数模式
+  
+  ```
+  fuction Person(name,age,job){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
+      alert(this.name);
+    };
+    return p;
+  } 
+  
+  val freind = Person("Nicholas",29,"Software Engineer");
+  
+  ```
+
+#### [4、理解原型对象和原型链。](https://www.cnblogs.com/wilber2013/p/4924309.html)
+
+  - **所有的对象都有”__proto__“属性，该属性对应对象的原型**
   "[[Prototype]]"作为对象的内部属性，是不能被直接访问的。所以为了方便查看一个对象的原型，Firefox和Chrome中提供了"__proto__"这个非标准（不是所有浏览器都支持）的访问器（ECMA引入了标准对象原型访问器"Object.getPrototype(object)"）。
   
-  **在JavaScript中，每一个函数都有一个prototype属性，当一个函数被用作构造函数来创建实例时，该函数的prototype属性值将被作为原型赋值给所有对象实例（也就是设置实例的__proto__属性），也就是说，所有实例的原型引用的是函数的prototype属性。“prototype属性为函数对象特有的，如果不是函数对象，将不会有这个属性。”**
+ - **所有的函数对象都有"prototype"属性，该属性的值会被赋值给该函数创建的对象的"__proto__"**
+  每一个函数都有一个prototype属性，当一个函数被用作构造函数来创建实例时，该函数的prototype属性值将被作为原型赋值给所有对象实例（也就是设置实例的__proto__属性），也就是说，所有实例的原型引用的是函数的prototype属性。“prototype属性为函数对象特有的，如果不是函数对象，将不会有这个属性。”
 
-  **在JavaScript的原型对象中，还包含一个"constructor"属性，这个属性对应创建所有指向该原型的实例的构造函数。**
+  - **所有的原型对象都有一个"constructor"属性，这个属性对应创建所有指向该原型的实例的构造函数。**
+  
+  - **函数对象和原型对象通过"prototype"和"constructor"属性进行相互关联**
+  当一个函数被当做构造函数来创建实例时，该函数的prototype属性值被作为原型赋值给所有对象实例（也就是设置实例的__proto__属性）
 
   
 
