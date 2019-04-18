@@ -220,7 +220,6 @@
     //继承属性 SuperType.call(this, name);
     this.age = age;
   }
-  
   ```
   
 
