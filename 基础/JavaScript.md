@@ -222,7 +222,32 @@
   }
   ```
   
-
+  
+#### [6、call、apply和bing的作用。](https://www.cnblogs.com/coco1s/p/4833199.html)
+  
+  ```
+  function fruits(){}
+  
+  fruits.prototype = {
+    color : "red";
+    say : function(){
+      console.log("My color is" + this.color);
+    }
+  }
+  
+  var apple = new fruits();
+  apple.say(); //My color is red
+  
+  var banana = {
+    color : "yellow";
+  }
+  
+  apple.say.call(banana); //My color is yellow
+  apple.say.apply(banana); //My color is yellow
+  ```
+  
+  call和apply的作用完全一样，都是改变被调用函数的作用域。不同的是call传递参数的时候是把所有参数依次传递进去，而apply则是将参数封装成数组。
+  
 
 
 
