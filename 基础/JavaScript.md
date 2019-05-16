@@ -249,14 +249,63 @@
   call和apply的作用完全一样，都是改变被调用函数的作用域。不同的是call传递参数的时候是把所有参数依次传递进去，而apply则是将参数封装成数组。
   
 
+ #### [7、this关键字的指向问题。](https://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/index.html)
 
-
-
-
-
-
-
-
+  - 作为对象方法：指向当前对象
+  ```
+  var point = { 
+    x : 0, 
+    y : 0, 
+    moveTo : function(x, y) { 
+      this.x = this.x + x; 
+      this.y = this.y + y; 
+    } 
+  }; 
+ 
+  point.moveTo(1, 1)//this 绑定到当前对象，即 point 对象
+  ```
+  - 作为函数调用：指向window全局对象
+  ```
+  function makeNoSense(x) { 
+    this.x = x; 
+  } 
+ 
+  makeNoSense(5); 
+  x;// x 已经成为一个值为 5 的全局变量
+  ```
+  - 对象函数的内部函数：指向window全局对象
+  ```
+  var point = { 
+    x : 0, 
+    y : 0, 
+    moveTo : function(x, y) { 
+      var that = this;
+      // 内部函数
+      var moveX = function(x) { 
+          that.x = x; //that 指向单签对象
+      }; 
+      // 内部函数
+      var moveY = function(y) { 
+          this.y = y; //this 指向window对象
+      }; 
+ 
+      moveX(x); 
+      moveY(y); 
+    } 
+  }; 
+  point.moveTo(1, 1); 
+  point.x; //==>0 
+  point.y; //==>0 
+  x; //==>1 
+  y; //==>1
+  ```
+  - 作为构造函数调用：指向创建的新对象
+  ```
+  function Point(x, y){ 
+     this.x = x; 
+     this.y = y; 
+  }
+  ```
 
 
 
