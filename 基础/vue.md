@@ -19,3 +19,34 @@
 
   - 组件化：从UI的角度进行划分的，方便UI的复用。
   - 模块化：从代码功能的角度进行划分，方便代码分层开发，保证功能模块的只能单一，实现解耦。
+
+
+#### 3、组件的定义方式。
+
+  - 1、使用Vue.extend和Vue.component方法。
+  ```
+  var login = Vue.extend({
+      template: '<h1>登录</h1>'
+    });
+  Vue.component('login', login);
+  ```
+  - 2、直接使用Vue.component方法。
+  ```
+  Vue.component('register', {
+      template: '<h1>注册</h1>'
+  });
+  ```
+  - 3、将模板字符串，定义到script标签中。
+  ```
+  <script id="tmpl" type="x-template">
+      <div><a href="#">登录</a> | <a href="#">注册</a></div>
+  </script>
+  
+  Vue.component('account', {
+      template: '#tmpl'
+  });
+  ```
+
+
+
+
