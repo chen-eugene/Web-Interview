@@ -49,7 +49,8 @@
 
   - 4、组件中的data和Vue实例中的data的区别。
     
-    - 组件中的data必须是一个function
+    - 组件中的data必须是一个function，并且放回一个对象。
+    - Vue实例中的data可以是一个对象。
     
     
   
