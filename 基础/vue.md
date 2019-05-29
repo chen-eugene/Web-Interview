@@ -46,8 +46,24 @@
       template: '#tmpl'
   });
   ```
+  - 4、使用 template元素，定义组件的html模板结构。
+  ```
+  
+  <template id="tmp1">
+    <div>
+      <h1>这是通过template元素，在外部定义的组件结构，这个方式，有代码的智能提示和高亮</h1>
+      <h4>好用，不错</h4>
+    </div>
+  </template>
+  
+  Vue.component("component",{
+    template:"#tmpl"
+  });
 
-  - 4、组件中的data和Vue实例中的data的区别。
+  ```
+  
+
+#### 4、组件中的data和Vue实例中的data的区别。
     
     - 组件中的data必须是一个function，并且放回一个对象。
     - Vue实例中的data可以是一个对象。
