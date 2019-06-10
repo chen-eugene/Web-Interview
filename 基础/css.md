@@ -18,4 +18,99 @@
   
   - block:
   
+
+#### [4、垂直居中对齐的方式。](https://www.cnblogs.com/zhouhuan/p/vertical_center.html)
+
+  - 1、使用绝对定位和负外边距对块级元素进行垂直居中(必须提前知道被居中块级元素的尺寸，否则无法准确实现垂直居中。)
+  ```
+  <div id="box">
+    <div id="child">我是测试DIV</div>
+  </div>
+  
+  #box {
+    width: 300px;
+    height: 300px;
+    background: #ddd;
+    position: relative;
+  }
+  #child {
+    width: 150px;
+    height: 100px;
+    background: orange;
+    position: absolute;
+    top: 50%;
+    margin: -50px 0 0 0;
+    line-height: 100px;
+  }
+  ```
+  
+  - 2、使用绝对定位和transform
+  ```
+  <div id="child">
+    我是一串很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的文本
+  </div>
+  
+  #box {
+    width: 300px;
+    height: 300px;
+    background: #ddd;
+    position: relative;
+  }
+  #child {
+    background: #93BC49;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  ```
+  
+  - 3、使用flex布局。
+  ```
+  <div id="box">雾霾天气，太久没有打球了</div>
+  
+  #box {
+    width: 300px;
+    height: 300px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+  }
+  
+  flex-start:交叉轴的起点对齐；
+　flex-end:交叉轴的终点对齐；
+　center:交叉轴的中点对齐；
+　baseline:项目第一行文字的基线对齐；
+　stretch（该值是默认值）:如果项目没有设置高度或者设为了auto，那么将占满整个容器的高度。
+  ```
+
+  - 4、使用 line-height 和 vertical-align 对图片进行垂直居中
+  ```
+  #box{
+    width: 300px;
+    height: 300px;
+    background: #ddd;
+    line-height: 300px;
+  }
+  #box img {
+    vertical-align: middle;
+  }
+  ```
+  
+  - 5、使用 display 和 vertical-align 对容器里的文字进行垂直居中
+  ```
+  <div id="box">
+    <div id="child">我也是一段测试文本</div>
+  </div>
+  
+  #box {
+    width: 300px;
+    height: 300px;
+    background: #ddd;
+    display: table;
+  }
+  #child {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  ```
   
