@@ -19,7 +19,17 @@
   - block:
   
 
-#### [4、垂直居中对齐的方式。](https://www.cnblogs.com/zhouhuan/p/vertical_center.html)
+#### [4、弹性布局](https://www.cnblogs.com/xuyuntao/articles/6391728.html)
+  
+  - flex-direction　　容器内项目的排列方向(默认横向排列)　　
+  - flex-wrap　　容器内项目换行方式
+  - flex-flow　　以上两个属性的简写方式
+  - justify-content　　项目在主轴上的对齐方式
+  - align-items　　项目在交叉轴上如何对齐
+  - align-content　　定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+
+
+#### [5、垂直居中对齐的方式。](https://www.cnblogs.com/zhouhuan/p/vertical_center.html)
 
   - 1、使用绝对定位和负外边距对块级元素进行垂直居中(必须提前知道被居中块级元素的尺寸，否则无法准确实现垂直居中。)
   ```
