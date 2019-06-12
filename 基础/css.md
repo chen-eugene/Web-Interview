@@ -1,12 +1,38 @@
-#### [1、CSS相对布局和绝对布局。](https://blog.csdn.net/gnail_oug/article/details/77564684)
+#### 1、CSS选择器。
+  **基本选择器：**
+  - * ：通用选择器，匹配所有元素。
+  - E ：标签选择器，匹配使用E的标签。
+  - .info ：class选择器，匹配所有class属性中包含info的元素。
+  - #footer ：id选择器，匹配id为footer的元素。
+  **多元素的组合选择器：**
+  - E,F ：多元素选择器，同时匹配所有E元素或F元素，E和F之间用逗号隔开。
+  - E F ：后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格隔开。
+  - E > F ：子元素选择器，匹配所有E元素的子元素F。
+  **伪类选择器：**
+  - E:fisrt-child ：匹配父元素的第一个子元素。
+  - E:link ：匹配所有未被点击的链接。
+  - E:visited ：匹配所有已被点击的链接。
+  - E:active ：匹配所有鼠标已经按下，但是还没有释放的E元素。
+  - E:hover ：匹配鼠标悬停其上的E元素。
+  - E:focus ：匹配获得当前焦点的E元素。
+  - E:lang(c) ：匹配lang属性等于c的E元素。
+  - E:first-line ：匹配E元素的第一行。
+  - E:first-letter ：匹配E元素的第一个字母。
+  - E:before ：在E元素之前插入生成的内容。
+  - E:after ：在E元素之后插入生成的内容。
+  - E:enabled ：匹配表单中激活的元素。
+
+
+
+#### [2、CSS相对布局和绝对布局。](https://blog.csdn.net/gnail_oug/article/details/77564684)
   
   - absolute：使元素绝对定位，相对于static定位以外的最近的一个祖先元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。
   - relative：使元素相对定位，相对于自己的正常位置进行定位。
   - flex：使元素绝对定位，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。
 
-#### [2、CSS动画](https://www.cnblogs.com/smyhvae/p/8435182.html)
+#### [3、CSS动画](https://www.cnblogs.com/smyhvae/p/8435182.html)
 
-#### 3、盒模型注意点。
+#### 4、盒模型注意点。
 
   - inline:
     - margin-top和margin-bottom无效
@@ -19,7 +45,7 @@
   - block:
   
 
-#### [4、弹性布局](https://www.cnblogs.com/xuyuntao/articles/6391728.html)
+#### [5、弹性布局](https://www.cnblogs.com/xuyuntao/articles/6391728.html)
   
   - flex-direction　　容器内项目的排列方向(默认横向排列)　　
   - flex-wrap　　容器内项目换行方式
@@ -29,7 +55,7 @@
   - align-content　　定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
 
 
-#### [5、垂直居中对齐的方式。](https://www.cnblogs.com/zhouhuan/p/vertical_center.html)
+#### [6、垂直居中对齐的方式。](https://www.cnblogs.com/zhouhuan/p/vertical_center.html)
 
   - 1、使用绝对定位和负外边距对块级元素进行垂直居中(必须提前知道被居中块级元素的尺寸，否则无法准确实现垂直居中。)
   ```
