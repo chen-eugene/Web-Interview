@@ -1,4 +1,4 @@
-#### 1、CSS选择器。
+#### [1、CSS选择器。](http://www.ruanyifeng.com/blog/2009/03/css_selectors.html)
   **基本选择器：**
   - '*' :     通用选择器，匹配所有元素。
   - E:        标签选择器，匹配使用E的标签。
