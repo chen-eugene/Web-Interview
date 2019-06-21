@@ -1,6 +1,6 @@
 #### 1、CSS选择器。
   **基本选择器：**
-  - * :       通用选择器，匹配所有元素。
+  - '*' :     通用选择器，匹配所有元素。
   - E:        标签选择器，匹配使用E的标签。
   - .info:    class选择器，匹配所有class属性中包含info的元素。
   - #footer:  id选择器，匹配id为footer的元素。  
@@ -11,18 +11,34 @@
   - E > F:  子元素选择器，匹配所有E元素的子元素F。
      
   **伪类选择器：**
-  - E:fisrt-child:  匹配父元素的第一个子元素。
-  - E:link:         匹配所有未被点击的链接。
-  - E:visited:      匹配所有已被点击的链接。
-  - E:active:       匹配所有鼠标已经按下，但是还没有释放的E元素。
-  - E:hover:        匹配鼠标悬停其上的E元素。
-  - E:focus:        匹配获得当前焦点的E元素。
-  - E:lang(c):      匹配lang属性等于c的E元素。
-  - E:first-line:   匹配E元素的第一行。
-  - E:first-letter: 匹配E元素的第一个字母。
-  - E:before:       在E元素之前插入生成的内容。
-  - E:after:        在E元素之后插入生成的内容。
-  - E:enabled:      匹配表单中激活的元素。
+  - E:fisrt-child:         匹配父元素的第一个子元素。
+  - E:link:                匹配所有未被点击的链接。
+  - E:visited:             匹配所有已被点击的链接。
+  - E:active:              匹配所有鼠标已经按下，但是还没有释放的E元素。
+  - E:hover:               匹配鼠标悬停其上的E元素。
+  - E:focus:               匹配获得当前焦点的E元素。
+  - E:lang(c):             匹配lang属性等于c的E元素。
+  - E:first-line:          匹配E元素的第一行。
+  - E:first-letter:        匹配E元素的第一个字母。
+  - E:before:              在E元素之前插入生成的内容。
+  - E:after:               在E元素之后插入生成的内容。
+  - E:enabled:             匹配表单中激活的元素。
+  - E:disabled:            匹配表单中禁用的元素。
+  - E:checked:             匹配表单中被选中的Radio(单选框)或CheckBox(复选框)元素。
+  - E::selection:          匹配用户当前选中的元素。
+  - E:root:                匹配文档的根元素，对于HTML文档，就是HTML元素。
+  - E:nth-child(n):        匹配其父元素的第n个子元素，第一个编号为1。
+  - E:nth-lasht-child(n):  匹配其父元素的倒数第n个子元素，第一个编号为1。
+  - E:nth-of-type(n):      与:nth-child()作用类似，但是仅匹配使用同种标签的元素。
+  - E:nth-last-of-type(n): 与:nth-last-child() 作用类似，但是仅匹配使用同种标签的元素。
+  - E:last-child:          匹配父元素的最后一个子元素，等同于:nth-last-child(1)。
+  - E:first-of-type:       匹配父元素下使用同种标签的第一个子元素，等同于:nth-of-type(1)。
+  - E:last-of-type:        匹配父元素下使用同种标签的最后一个子元素，等同于:nth-last-of-type(1)。
+  - E:only-child:          匹配父元素下仅有的一个子元素，等同于:first-child:last-child或 :nth-child(1):nth-last-child(1)。
+  - E:only-of-type:        匹配父元素下使用同种标签的唯一一个子元素，等同于:first-of-type:last-of-type或 :nth-of-type(1):nth-last-of-type(1)。
+  - E:empty:               匹配一个不包含任何子元素的元素，注意，文本节点也被看作子元素。
+  - E:not(s):              匹配不符合当前选择器的任何元素。
+  - E:target:              匹配文档中特定"id"点击后的效果。
 
 
 
