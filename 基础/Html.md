@@ -8,8 +8,9 @@
    移动设备默认的viewport是layout viewport，也就是那个比屏幕要宽的viewport，但在进行移动设备网站的开发时，我们需要的是ideal viewport。
    
    把当前的viewport宽度设置为 ideal viewport 的宽度
- ```
+   
+```
  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
- ```
+```
   
 
