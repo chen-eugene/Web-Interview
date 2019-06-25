@@ -282,7 +282,7 @@
       var that = this;
       // 内部函数
       var moveX = function(x) { 
-          that.x = x; //that 指向单签对象
+          that.x = x; //that 指向当前对象
       }; 
       // 内部函数
       var moveY = function(y) { 
@@ -306,6 +306,10 @@
      this.y = y; 
   }
   ```
+
+#### [8、JavaScript的this原理。](http://www.ruanyifeng.com/blog/2018/06/javascript-this.html)
+
+  
 
 
 
