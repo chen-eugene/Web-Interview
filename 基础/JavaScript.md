@@ -1,14 +1,17 @@
-#### 1、怎么延迟脚本加载。
+#### 1、怎么提高页面的打开速度。
    
    **需要注意的是，带有 src 属性的<script>元素不应该在其<script>和</script>标签之间再包含额外的 JavaScript 代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码 会被忽略。**
   
-  - <script>标签的defer属性：只适用于外部脚本
+  - 标签存放的位置：都把全部 JavaScript 引 用放在<body>元素中页面内容的后面
+   
+  - <script>标签的defer属性：延迟脚本，只适用于外部脚本
   ```
   <!DOCTYPE html>
     <html>
       <head>
         <title>Example HTML Page</title>
-        <script type="text/javascript" defer="defer" src="example1.js"></script> <script type="text/javascript" defer="defer" src="example2.js"></script>
+        <script type="text/javascript" defer="defer" src="example1.js"></script> 
+        <script type="text/javascript" defer="defer" src="example2.js"></script>
       </head>
       <body>
         <!-- 这里放内容 --> 
@@ -17,7 +20,7 @@
   ```
   虽然我们把<script>元素放在了文档的<head>元素中，但其中包含的脚本将延迟 到浏览器遇到</html>标签后再执行。HTML5 规范要求脚本按照它们出现的先后顺序执行，因此第一 个延迟脚本会先于第二个延迟脚本执行，而这两个脚本会先于 DOMContentLoaded 事件(详见第 13 章) 9 执行。在现实当中，延迟脚本并不一定会按照顺序执行，也不一定会在 DOMContentLoaded 事件触发 前执行，因此最好只包含一个延迟脚本。
   
-
+  - <script>元素定义了 async 属性：异步脚本，只适用于外部脚本文件，标记为 async 的脚本并不保证按照指定它们的先后顺序执行。
 
 
 #### 1、let和var的区别。
