@@ -23,6 +23,24 @@
   - <script>元素定义了 async 属性：异步脚本，只适用于外部脚本文件，标记为 async 的脚本并不保证按照指定它们的先后顺序执行。
 <br>   
    
+#### 2、数据类型。
+
+  - 基本数据类型：Undefined、Null、Boolean、Number、String
+  - 复杂数据类型：Object，本质上是由一组无序的名值对组成的
+  
+  type操作符：
+  - "undefined"——如果这个值未定义
+  - "boolean"——如果这个值是布尔值
+  - "string"——如果这个值是字符串
+  - "number"——如果这个值是数值
+  - "object"——如果这个值是对象或 null
+  - "function"——如果这个值是函数
+
+
+   
+   
+   
+   
 #### 1、let和var的区别。
 
   - 先声明，后使用：let必须先声明再使用，否则会报错。
