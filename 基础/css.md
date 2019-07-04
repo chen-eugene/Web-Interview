@@ -197,7 +197,7 @@
   - 方法一：父元素设置font-size:0 
 &nbsp;&nbsp;此种方法给父元素设置了font-size:0之后必须给该元素设置font-size
 
-  - 方法二：给该元素float:left 
+  - 方法二：给该元素float:left      
 &nbsp;&nbsp;此种方法虽然可以实现取消间距，但是可能对布局产生影响，需要考虑布局
 
  - 方法三：letter-spacing:0
