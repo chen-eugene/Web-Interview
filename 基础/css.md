@@ -176,7 +176,7 @@
   - 父子元素都是块级元素：对于块级元素，子元素的宽度默认为父元素的100%。
  <br>
  
- #### 8、inline、inline-block、block的区别。
+ #### [8、inline、inline-block、block的区别。](https://www.cnblogs.com/KeithWang/p/3139517.html)
  
   - display:block
     - block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素宽度。
@@ -190,5 +190,22 @@
 
   - display:inline-block
     - 简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。比如我们可以给一个link（a元素）inline-block属性值，使其既具有block的宽度高度特性又具有inline的同行特性。
+  
+  
+多个inline元素和inline-block元素同行展示时会出现间距问题:
+  
+  - 方法一：父元素设置font-size:0 
+&nbsp;&nbsp;此种方法给父元素设置了font-size:0之后必须给该元素设置font-size
+
+  - 方法二：给该元素float:left 
+&nbsp;&nbsp;此种方法虽然可以实现取消间距，但是可能对布局产生影响，需要考虑布局
+
+ - 方法三：letter-spacing:0
+&nbsp;&nbsp;这里父元素需要设置letter-spacing属性的值为一个负值，具体值的大小看情况，但是我们可以无限写小，无妨碍，如letter-spacing：-1000px 
+  
+  
+  
+  
+  
   
   
