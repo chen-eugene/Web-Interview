@@ -61,7 +61,7 @@
   - inline-block:
   
   - block:
-  
+  <br>
 
 #### [5、弹性布局](https://www.cnblogs.com/xuyuntao/articles/6391728.html)
   
@@ -71,7 +71,7 @@
   - justify-content　　项目在主轴上的对齐方式
   - align-items　　项目在交叉轴上如何对齐
   - align-content　　定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
-
+<br>
 
 #### [6、垂直居中对齐的方式。](https://www.cnblogs.com/zhouhuan/p/vertical_center.html)
 
@@ -167,14 +167,28 @@
     vertical-align: middle;
   }
   ```
+<br> 
   
  #### [7、父元素与子元素的width的关系。](https://www.cnblogs.com/zhuzhenwei918/p/6389567.html)
  
   - 父子元素都是内联元素：宽度是由其内容撑起来的，故为auto。
   
   - 父子元素都是块级元素：对于块级元素，子元素的宽度默认为父元素的100%。
+ <br>
  
+ #### 8、inline、inline-block、block的区别。
  
+  - display:block
+    - block元素会独占一行，多个block元素会各自新起一行。默认情况下，block元素宽度自动填满其父元素宽度。
+    - block元素可以设置width,height属性。块级元素即使设置了宽度,仍然是独占一行。
+    - block元素可以设置margin和padding属性。
   
+  - display:inline
+    - inline元素不会独占一行，多个相邻的行内元素会排列在同一行里，直到一行排列不下，才会新换一行，其宽度随元素的内容而变化。
+    - inline元素设置width,height属性无效。
+    - inline元素的margin和padding属性，水平方向的padding-left, padding-right, margin-left, margin-right都产生边距效果；但竖直方向的padding-top, padding-bottom, margin-top, margin-bottom不会产生边距效果。
+
+  - display:inline-block
+    - 简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。比如我们可以给一个link（a元素）inline-block属性值，使其既具有block的宽度高度特性又具有inline的同行特性。
   
   
