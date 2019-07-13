@@ -95,7 +95,36 @@
   - 版权：copyright
 <br>
 
-
+#### 2、CSS id的命名
+- 外　套：　　wrap
+- 主导航：　　mainnav
+- 子导航：　　subnav
+- 页　脚：　　footet
+- 整个页面：　content
+- 页　眉：　　header
+- 页　脚：　　footer
+- 商　标：　　label
+- 标　题：　　title
+- 主导航：　　nav（mainnav/globalnav）
+- 顶导航：　　topnav
+- 边导航：　　sidebar
+- 左导航：　　leftsidebar
+- 右导航：　　rightsidebar
+- 当前位置：　loc
+- 旗　志：　　logo
+- 标　语：　　banner
+- 菜单内容1： menu1 content
+- 菜单容量：　menu container
+- 子菜单：　　submenu
+- 边导航图标：sidebarIcon
+- 注释：　　　note
+- 面包屑：　　breadcrumb(即页面所处位置导航提示）
+- 容器：　　　container
+- 内容：　　　content
+- 搜索：　　　search
+- 登陆：　　　Login
+- 功能区：　　shop(如购物车，收银台)
+- 当前的　　　current
 
 
 
