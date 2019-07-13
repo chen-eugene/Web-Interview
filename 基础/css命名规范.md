@@ -40,16 +40,16 @@
 #### 2、HTML文件中id的命名
 
 - 页面结构
-　- 容器: container
-　- 页头：header
-　- 内容：content/container
-　- 页面主体：main
-　- 页尾：footer
-　- 导航：nav
-　- 侧栏：sidebar
-　- 栏目：column
-　- 页面外围控制整体布局宽度：wrapper
-　- 左右中：left right center
+  - 容器: container
+  - 页头：header
+  - 内容：content/container
+  - 页面主体：main
+  - 页尾：footer
+  - 导航：nav
+  - 侧栏：sidebar
+  - 栏目：column
+  - 页面外围控制整体布局宽度：wrapper
+  - 左右中：left right center
  
 - 导航
 　- 导航：nav
