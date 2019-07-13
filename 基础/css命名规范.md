@@ -1,6 +1,6 @@
 #### 1、CSS命名规则：
   
-  - 头：header 
+  - 头：header   
 　- 内容：content/containe 
 　- 尾：footer 
 　- 导航：nav 
