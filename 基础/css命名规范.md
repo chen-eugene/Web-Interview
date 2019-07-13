@@ -1,17 +1,17 @@
 #### 1、CSS命名规则：
   
-  - 头：header     
-　- 内容：content/containe      
-　- 尾：footer    
-　- 导航：nav     
-　- 侧栏：sidebar     
-　- 栏目：column   
-　- 页面外围控制整体布局宽度：wrapper     
-　- 左右中：left right center     
-　- 登录条：loginbar 
-　- 标志：logo 
-　- 广告：banner 
-　- 页面主体：main 
+ - 头：header     
+ - 内容：content/containe      
+ - 尾：footer    
+ - 导航：nav     
+ - 侧栏：sidebar     
+ - 栏目：column   
+ - 页面外围控制整体布局宽度：wrapper     
+ - 左右中：left right center     
+ - 登录条：loginbar 
+ - 标志：logo 
+ - 广告：banner 
+ - 页面主体：main 
 　- 热点：hot 
 　- 新闻：news 
 　- 下载：download 
