@@ -12,29 +12,29 @@
  - 标志：logo 
  - 广告：banner 
  - 页面主体：main 
-　- 热点：hot 
-　- 新闻：news 
-　- 下载：download 
-　- 子导航：subnav 
-　- 菜单：menu 
-　- 子菜单：submenu 
-　- 搜索：search 
-　- 友情链接：friendlink 
-　- 页脚：footer 
-　- 版权：copyright 
-　- 滚动：scroll 
-　- 标签页：tab 
-　- 文章列表：list 
-　- 提示信息：msg 
-　- 小技巧：tips 
-　- 栏目标题：title 
-　- 加入：joinus 
-　- 指南：guild 
-　- 服务：service 
-　- 注册：regsiter 
-　- 状态：status 
-　- 投票：vote 
-　- 合作伙伴：partner 
+ - 热点：hot 
+ - 新闻：news 
+ - 下载：download 
+ - 子导航：subnav 
+ - 菜单：menu 
+ - 子菜单：submenu 
+ - 搜索：search 
+ - 友情链接：friendlink 
+ - 页脚：footer 
+ - 版权：copyright 
+ - 滚动：scroll 
+ - 标签页：tab 
+ - 文章列表：list 
+ - 提示信息：msg 
+ - 小技巧：tips 
+ - 栏目标题：title 
+ - 加入：joinus 
+ - 指南：guild 
+ - 服务：service 
+ - 注册：regsiter 
+ - 状态：status 
+ - 投票：vote 
+ - 合作伙伴：partner 
 <br>
 
 #### 2、HTML文件中id的命名
