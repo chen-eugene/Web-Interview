@@ -90,8 +90,29 @@
          });
          alert(sum); //15
          ```
-         
+<br>
 
+#### 5、字面量
+   
+&emsp;&emsp;在编程语言中，字面量是一种表示值的记法。
+   
+   - 字符串字面量：是指双引号引住的一系列字符，双引号中可以没有字符，可以只有一个字符，也可以有很多个字符，`var test="hello world!"; "hello world!"就是字符串字面量，test是变量名`
+   - 数组字面量：`var team=["tom","john","smith","kobe"]; ["tom","john","smith","kobe"]是数组字面量`
+   - 对象字面量：`var person={name:"tom",age:"26",sex:"male"}; {name:"tom",age:"26",sex:"male"}为对象字面量`
+   - 函数字面量：
+   ```
+   var person={
+      name:"tom",
+      age:"23",
+      tell:function(){alert(name);}
+   }
+   ```
+&emsp;&emsp;其中tell的值function{alert(name);}被认为是函数字面量，在调用时，函数不会执行，而是被当做数据来传递。
+
+&emsp;&emsp;当然如果想把函数字面量当作函数来运行，可以使用eval(String)函数，让String里面的JavaScript执行运算：
+
+&emsp;&emsp; 看到上面的示例，也许你会想到JSON（JavaScript Object Notation），对的，两者的确是有联系的。
+JSON（JavaScript对象记法），它是一种用于描述文件和数组的记法，JSON由JavaScript字面量的一个子集组成。JSON可以用于交换数据，通常用它来替代xml。
 
 #### 1、let和var的区别。
 
