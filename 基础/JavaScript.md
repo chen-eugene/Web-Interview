@@ -66,8 +66,31 @@
       - 当作栈使用：push()、pop()
       - 当作队列使用：shift()、push()、unshift()【与shift方法相反，同时使用unshifit和pop可以从末端移除项】
       - 排序方法：reverse、sort
-      
-   
+      - 操作方法：
+         - concat：根据当前数组生成新的数组，`var colors2 = colors.concat("yellow", ["black", "brown"]);`
+         - slice：截取数组`var colors3 = colors.slice(1,4);`
+         - splice(起始位置，要删除的向，...)：如splice(2,1,"red","green");会删除当前数组位置 2 的项，然后再从位置 2 开始插入字符串 "red"和"green"。
+      - 位置方法：
+         - indexOf()
+         - lastIndexOf()：从数组的末尾开始向前查找
+      - 迭代方法：
+         - every()：如果该函数对每一项都返回 true，则返回 true
+         - filter()：返回该函数会返回 true 的项组成的数组
+         - forEach()：
+         - map()：
+         - some()：如果该函数对任一项返回 true，则返回 true
+      - 归并方法：
+         - reduce()：从数组的第一项开始，逐个遍历到最后
+         - reduceRight()：从数组的最后一项开始，向前遍历到第一项
+         ```
+         var values = [1,2,3,4,5];
+         //prev:前一个值 cur:当前值 index:索引 array:数组对象
+         var sum = values.reduce(function(prev, cur, index, array){
+             return prev + cur;
+         });
+         alert(sum); //15
+         ```
+         
 
 
 #### 1、let和var的区别。
