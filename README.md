@@ -29,6 +29,6 @@
   
   ### [JavaScript](https://github.com/chen-eugene/Web-Interview/blob/master/%E5%9F%BA%E7%A1%80/JavaScript.md)
   
-  ### [ES6]()
+  ### [ES6](https://github.com/chen-eugene/Web-Interview/blob/master/%E5%9F%BA%E7%A1%80/es6.md)
   
   ### [Vue](https://github.com/chen-eugene/Web-Interview/blob/master/%E5%9F%BA%E7%A1%80/vue.md)
