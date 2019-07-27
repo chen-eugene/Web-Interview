@@ -1,7 +1,10 @@
-目录：
-&emsp;[第一章到第五章](#1、怎么提高页面的打开速度。)      
+目录：     
+&emsp;[第一章到第五章](#第一章到第五章)      
 &emsp;[第6章 面向对象的程序设计]()
 
+
+### 第一章到第五章
+<br>
 
 #### 1、怎么提高页面的打开速度。
    
@@ -95,6 +98,37 @@
          });
          alert(sum); //15
          ```
+
+   - Function类型：每个函数都是Function类型的实例。
+      
+      - 函数没有重载
+      
+      - 函数声明和函数表达式
+      ```
+      alert(sum(10,10));
+      //函数声明
+      function sum(num1, num2){
+         return num1 + num2;
+      }
+      
+      alert(sum(10,10)); //运行期间会产生错误
+      //函数表达式
+      var sum = function(num1, num2){
+         return num1 + num2;
+      };
+      ```
+     &emsp;&emsp; 解析器会率先读取函数声明，并使其在执行任何代码之前可用(可以访问);至于函数表达式，则必须等到解析器执行到它所在的代码行，才会真正被解释执行。
+     
+     - 函数内部属性：arguments、this
+        - arguments：它是一个类数组对象，包含传入函数找那个的所有参数。
+        - this：和Java中的this大致类似，指向的时候函数的执行环境对象。
+        
+     - 函数属性和方法：length、prototype
+        - length：表示函数希望接受的命名参数的个数。
+        - prototype：指向原型对象
+        
+        - apply()：接收两个参数：第一个为运行函数的作用域；第二个可以使Array实例，也可以是arguments对象。
+        - call()：第一个参数为作用域，其余参数必须将函数的参数列举出来。     
 <br>
 
 #### 5、字面量
@@ -118,10 +152,81 @@
 
 &emsp;&emsp; 看到上面的示例，也许你会想到JSON（JavaScript Object Notation），对的，两者的确是有联系的。
 JSON（JavaScript对象记法），它是一种用于描述文件和数组的记法，JSON由JavaScript字面量的一个子集组成。JSON可以用于交换数据，通常用它来替代xml。
+<br>
+<br>
 
+### 第六章：面向对象的程序设计
+<br>
 
+#### [1、理解原型对象和原型链。](https://www.cnblogs.com/wilber2013/p/4924309.html)
 
-#### 2、对象创建的几种方式。
+  - **所有的对象都有”__proto__“属性，该属性对应对象的原型**    
+  
+  "[[Prototype]]"作为对象的内部属性，是不能被直接访问的。所以为了方便查看一个对象的原型，Firefox和Chrome中提供了"__proto__"这个非标准（不是所有浏览器都支持）的访问器（ECMA引入了标准对象原型访问器"Object.getPrototype(object)"）。
+  
+ - **所有的函数对象都有"prototype"属性，该属性的值会被赋值给该函数创建的对象的"__proto__"**    
+ 
+  每一个函数都有一个prototype属性，当一个函数被用作构造函数来创建实例时，该函数的prototype属性值将被作为原型赋值给所有对象实例（也就是设置实例的__proto__属性），也就是说，所有实例的原型引用的是函数的prototype属性。“prototype属性为函数对象特有的，如果不是函数对象，将不会有这个属性。”
+
+  - **所有的原型对象都有一个"constructor"属性，这个属性对应创建所有指向该原型的实例的构造函数。**
+  
+  - **函数对象和原型对象通过"prototype"和"constructor"属性进行相互关联**
+  
+  当一个函数被当做构造函数来创建实例时，该函数的prototype属性值被作为原型赋值给所有对象实例（也就是设置实例的__proto__属性）
+<br>
+  
+#### 2、原型链的缺点和对象冒充。
+
+  **所有引用类型默认都继承了Object，这个继承也是通过原型链实现的。**
+  
+  **所有函数的默认原型都是Object的实例，因此默认原型都会包含一个内部指针，指向Object.prototype。**
+  
+  **原型链的问题：**
+  - 属性共享问题：通过原型来实现继承时，原型实际上会变成另一个类型的实例。于是，原先的实例属性也就顺理成章地成了现在的原型属性了。
+  - 在创建子类型的实例时，不能向超类型的构造函数中传递参数。即没有办法在不影响所有对象实例的情况下，给超类型的构造函数传递参数。
+
+  **对象冒充：**
+  ```
+  function SuperType(name){
+    this.name = name;
+    this.colors = ["red","blue","green"];
+  }
+  
+  function SubType(){
+    //继承了SuperType，同时传递了参数
+    SuperType.call(this,"Nicholas");
+  }
+  
+  val instance1 = new SubType();
+  alert(instance.name);    //"Nicholas";
+  instance1.colors.push("black");
+  alert(instance1.colors);    //"red,blue,green,black"
+  
+  var instance2 = new SubType();
+  alert(instance2.colors);    //"red,blue,green"
+  ```
+  **对象冒充无法避免构造函数模式存在的问题，仅仅解决了传参和属性共享问题，但是不能解决函数的复用问题。**
+  
+  **组合继承：指的是将原型链和借用构造函数的技术组合到一块。思路是使用原型链实现对原型属性和方 法的继承，而通过借用构造函数来实现对实例属性的继承。**
+  
+  ```
+  function SuperType(name){
+    this.name = name;
+    this.colors = ["red", "blue", "green"];
+  }
+  
+  SuperType.prototype.sayName = function(){
+    alert(this.name);
+  };
+  
+  function SubType(name, age){
+    //继承属性 SuperType.call(this, name);
+    this.age = age;
+  }
+  ```
+<br>
+
+#### 3、对象创建的几种方式。
 
   - ①字面量方式：使用Object构造函数和字面量会产生大量的重复代码。
   ```
@@ -258,73 +363,7 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
   
   ```
 
-#### [4、理解原型对象和原型链。](https://www.cnblogs.com/wilber2013/p/4924309.html)
 
-  - **所有的对象都有”__proto__“属性，该属性对应对象的原型**    
-  
-  "[[Prototype]]"作为对象的内部属性，是不能被直接访问的。所以为了方便查看一个对象的原型，Firefox和Chrome中提供了"__proto__"这个非标准（不是所有浏览器都支持）的访问器（ECMA引入了标准对象原型访问器"Object.getPrototype(object)"）。
-  
- - **所有的函数对象都有"prototype"属性，该属性的值会被赋值给该函数创建的对象的"__proto__"**    
- 
-  每一个函数都有一个prototype属性，当一个函数被用作构造函数来创建实例时，该函数的prototype属性值将被作为原型赋值给所有对象实例（也就是设置实例的__proto__属性），也就是说，所有实例的原型引用的是函数的prototype属性。“prototype属性为函数对象特有的，如果不是函数对象，将不会有这个属性。”
-
-  - **所有的原型对象都有一个"constructor"属性，这个属性对应创建所有指向该原型的实例的构造函数。**
-  
-  - **函数对象和原型对象通过"prototype"和"constructor"属性进行相互关联**
-  
-  当一个函数被当做构造函数来创建实例时，该函数的prototype属性值被作为原型赋值给所有对象实例（也就是设置实例的__proto__属性）
-
-  
-#### 5、原型链的缺点和对象冒充。
-
-  **所有引用类型默认都继承了Object，这个继承也是通过原型链实现的。**
-  
-  **所有函数的默认原型都是Object的实例，因此默认原型都会包含一个内部指针，指向Object.prototype。**
-  
-  **原型链的问题：**
-  - 属性共享问题：通过原型来实现继承时，原型实际上会变成另一个类型的实例。于是，原先的实例属性也就顺理成章地成了现在的原型属性了。
-  - 在创建子类型的实例时，不能向超类型的构造函数中传递参数。即没有办法在不影响所有对象实例的情况下，给超类型的构造函数传递参数。
-
-  **对象冒充：**
-  ```
-  function SuperType(name){
-    this.name = name;
-    this.colors = ["red","blue","green"];
-  }
-  
-  function SubType(){
-    //继承了SuperType，同时传递了参数
-    SuperType.call(this,"Nicholas");
-  }
-  
-  val instance1 = new SubType();
-  alert(instance.name);    //"Nicholas";
-  instance1.colors.push("black");
-  alert(instance1.colors);    //"red,blue,green,black"
-  
-  var instance2 = new SubType();
-  alert(instance2.colors);    //"red,blue,green"
-  ```
-  **对象冒充无法避免构造函数模式存在的问题，仅仅解决了传参和属性共享问题，但是不能解决函数的复用问题。**
-  
-  **组合继承：指的是将原型链和借用构造函数的技术组合到一块。思路是使用原型链实现对原型属性和方 法的继承，而通过借用构造函数来实现对实例属性的继承。**
-  
-  ```
-  function SuperType(name){
-    this.name = name;
-    this.colors = ["red", "blue", "green"];
-  }
-  
-  SuperType.prototype.sayName = function(){
-    alert(this.name);
-  };
-  
-  function SubType(name, age){
-    //继承属性 SuperType.call(this, name);
-    this.age = age;
-  }
-  ```
-  
   
 #### [6、call、apply和bing的作用。](https://www.cnblogs.com/coco1s/p/4833199.html)
   
