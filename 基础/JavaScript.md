@@ -5,7 +5,8 @@
 
 
 ### 第一章到第五章
-<br>
+
+
 #### 1、怎么提高页面的打开速度。
    
    &emsp;&emsp;**需要注意的是，带有 src 属性的<script>元素不应该在其<script>和</script>标签之间再包含额外的 JavaScript 代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码 会被忽略。**
@@ -181,7 +182,8 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
 <br>
 
 ### 第六章：面向对象的程序设计
-<br>
+
+
 #### [1、理解原型对象和原型链。](https://www.cnblogs.com/wilber2013/p/4924309.html)
 
   - **所有的对象都有”__proto__“属性，该属性对应对象的原型**    
@@ -389,7 +391,8 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
 <br>
 
 ### 第七章：函数表达式
-<br>
+
+
 #### [1、this关键字的指向问题。](https://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/index.html)
 
   - 作为对象方法：指向当前对象
