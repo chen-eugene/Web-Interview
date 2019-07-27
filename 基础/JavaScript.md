@@ -1,11 +1,11 @@
 目录：     
 &emsp;[第一章到第五章](#第一章到第五章)      
-&emsp;[第6章 面向对象的程序设计]()
+&emsp;[第六章 面向对象的程序设计](#第六章：面向对象的程序设计)  
+&emsp;[第七章 函数表达式](#第七章：函数表达式)
 
 
 ### 第一章到第五章
 <br>
-
 #### 1、怎么提高页面的打开速度。
    
    &emsp;&emsp;**需要注意的是，带有 src 属性的<script>元素不应该在其<script>和</script>标签之间再包含额外的 JavaScript 代码。如果包含了嵌入的代码，则只会下载并执行外部脚本文件，嵌入的代码 会被忽略。**
@@ -29,7 +29,6 @@
 &emsp;&emsp;其中包含的脚本将延迟到浏览器遇到</html>标签后再执行。HTML5 规范要求脚本按照它们出现的先后顺序执行，因此第一个延迟脚本会先于第二个延迟脚本执行，而这两个脚本会先于 DOMContentLoaded 事件(详见第 13 章) 9 执行。在现实当中，延迟脚本并不一定会按照顺序执行，也不一定会在 DOMContentLoaded 事件触发前执行，因此最好只包含一个延迟脚本。
   
   - <script>元素定义了 async 属性：异步脚本，只适用于外部脚本文件，标记为 async 的脚本并不保证按照指定它们的先后顺序执行。
-   
 <br>   
    
 #### 2、数据类型。
@@ -68,7 +67,33 @@
    &emsp;&emsp;作用域链的前端，始终都是当前执行的代码所 在环境的变量对象。如果这个环境是函数，则将其**活动对象(activation object)** 作为变量对象。活动对象在最开始时只包含一个变量，即 arguments 对象(这个对象在全局环境中是不存在的)。
 <br>
 
-#### 4、引用数据类型
+#### [4、call、apply和bing的作用。](https://www.cnblogs.com/coco1s/p/4833199.html)
+  
+  ```
+  function fruits(){}
+  
+  fruits.prototype = {
+    color : "red";
+    say : function(){
+      console.log("My color is" + this.color);
+    }
+  }
+  
+  var apple = new fruits();
+  apple.say(); //My color is red
+  
+  var banana = {
+    color : "yellow";
+  }
+  
+  apple.say.call(banana); //My color is yellow
+  apple.say.apply(banana); //My color is yellow
+  ```
+  
+  call和apply的作用完全一样，都是改变被调用函数的作用域。不同的是call传递参数的时候是把所有参数依次传递进去，而apply则是将参数封装成数组。
+<br>
+
+#### 5、引用数据类型
 
    - Array:数组的每一项都可以保存任何类型的数据。
       - 当作栈使用：push()、pop()
@@ -131,7 +156,7 @@
         - call()：第一个参数为作用域，其余参数必须将函数的参数列举出来。     
 <br>
 
-#### 5、字面量
+#### 6、字面量
    
 &emsp;&emsp;在编程语言中，字面量是一种表示值的记法。
    
@@ -157,7 +182,6 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
 
 ### 第六章：面向对象的程序设计
 <br>
-
 #### [1、理解原型对象和原型链。](https://www.cnblogs.com/wilber2013/p/4924309.html)
 
   - **所有的对象都有”__proto__“属性，该属性对应对象的原型**    
@@ -362,36 +386,11 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
   val freind = Person("Nicholas",29,"Software Engineer");
   
   ```
+<br>
 
-
-  
-#### [6、call、apply和bing的作用。](https://www.cnblogs.com/coco1s/p/4833199.html)
-  
-  ```
-  function fruits(){}
-  
-  fruits.prototype = {
-    color : "red";
-    say : function(){
-      console.log("My color is" + this.color);
-    }
-  }
-  
-  var apple = new fruits();
-  apple.say(); //My color is red
-  
-  var banana = {
-    color : "yellow";
-  }
-  
-  apple.say.call(banana); //My color is yellow
-  apple.say.apply(banana); //My color is yellow
-  ```
-  
-  call和apply的作用完全一样，都是改变被调用函数的作用域。不同的是call传递参数的时候是把所有参数依次传递进去，而apply则是将参数封装成数组。
-  
-
- #### [7、this关键字的指向问题。](https://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/index.html)
+### 第七章：函数表达式
+<br>
+#### [1、this关键字的指向问题。](https://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/index.html)
 
   - 作为对象方法：指向当前对象
   ```
@@ -449,7 +448,7 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
   }
   ```
 
-#### [8、JavaScript的this原理。](http://www.ruanyifeng.com/blog/2018/06/javascript-this.html)
+#### [2、JavaScript的this原理。](http://www.ruanyifeng.com/blog/2018/06/javascript-this.html)
 
   
 
