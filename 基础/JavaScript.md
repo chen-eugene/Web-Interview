@@ -515,7 +515,41 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
       - alert()：通常使用 alert()生成的“警告”对话框向用户显示一些他们无法控制的消息，例如错误消息。而 用户只能在看完消息后关闭对话框。
       - confirm()：与alert的区别，“确认”对话框除了显示 OK 按钮外，还会显示一个 Cancel(“取消”)按钮，两个按钮可以让用户决定是否执行给定的操作
       - prompt()：提示框中除了显示 OK 和 Cancel 按钮之外，还会显示一个文本输入域，以供用户在其中输入内容
+<br>
+
+#### 4、location对象
       
+&emsp;&emsp;**每次修改 location 的属性(hash 除外)，页面都会以新 URL 重新加载。**
+      
+   ```
+   //立即打开新URL并在浏览器的历史记录中生成一条记录
+   location.assign("http://www.wrox.com");
+
+   //和location.assign效果一样
+   window.location = "http://www.wrox.com";
+   location.href = "http://www.wrox.com";
+
+   //假设初始 URL 为 http://www.wrox.com/WileyCDA/
+   
+   //将 URL 修改为"http://www.wrox.com/WileyCDA/#section1"
+   location.hash = "#section1";
+   
+   //将 URL 修改为"http://www.wrox.com/WileyCDA/?q=javascript" 
+   location.search = "?q=javascript";
+   
+   //将 URL 修改为"http://www.yahoo.com/WileyCDA/" 
+   location.hostname = "www.yahoo.com";
+   
+   //将 URL 修改为"http://www.yahoo.com/mydir/" 
+   location.pathname = "mydir";
+   
+   //将 URL 修改为"http://www.yahoo.com:8080/WileyCDA/" 
+   location.port = 8080;
+
+   ```
+   
+   
+   
    
    
   
