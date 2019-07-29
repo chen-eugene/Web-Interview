@@ -1,10 +1,10 @@
 目录：     
-&emsp;[第一章到第五章](#第一章到第五章)        
-&emsp;[第六章 面向对象的程序设计](#第六章面向对象的程序设计)    
-&emsp;[第七章 函数表达式](#第七章函数表达式)  
+&emsp;[第一章到第五章](#第一章-第五章)        
+emsp;[第六章 面向对象的程序设计](#第六章面向对象的程序设计)    
+&emsp;[第七章 函数表达式](#第七章-第八章)  
 
 
-### 第一章到第五章
+### 第一章-第五章
 
 
 #### 1、怎么提高页面的打开速度。
@@ -395,10 +395,23 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
 
 ---
 
-### 第七章函数表达式
+### 第七章-第八章
 
 
-#### [1、this关键字的指向问题。](https://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/index.html)
+#### 1、递归
+   
+&emsp;&emsp;arguments.callee 是一个指向正在执行的函数的指针，因此可以用它来实现对函数的递归调用。
+   ```
+   function factorial(num){
+    if (num <= 1){
+        return 1;
+    } else {
+        return num * arguments.callee(num-1);
+   } }
+   ```
+<br>
+
+#### [2、this关键字的指向问题。](https://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/index.html)
 
   - 作为对象方法：指向当前对象
   ```
@@ -455,9 +468,51 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
      this.y = y; 
   }
   ```
+<br>
 
 #### [2、JavaScript的this原理。](http://www.ruanyifeng.com/blog/2018/06/javascript-this.html)
+<br>
 
+#### 3、window对象
+
+&emsp;&emsp;BOM的核心对象是 window，表示浏览器的一个实例。它既是通过 JavaScript 访问浏览器的一个接口，又是 ECMAScript 规定的 Global 对象。这就意味着在网页中定义的任何一个对象、变量和函数，都以 window 作为其 Global 对象。
+
+   - 全局作用域
+   
+&emsp;&emsp;由于 window 对象同时扮演着 ECMAScript 中 Global 对象的角色，因此所有在全局作用域中声明的变量、函数都会变成 window 对象的属性和方法
+
+   - 打开窗口：`window.open()`，接收四个参数
+      - 要加载的URL（必须）
+      - 窗口目标（和 <a> 标签的target属性一样）
+      - 一个逗号分隔的设置字符串，表示在新窗口中都显示哪些特性
+      - 一个表示新页面是否取代浏览器历史记录中当前加载也的布尔值（只在不打开新窗口的情况下使用）
+
+   - 超时调用和间歇调用
+      - setTimeout：接收两个参数：要执行的代码和时间
+      ```
+      setTimeout(function() {
+         alert("Hello world!");
+      }, 1000);
+      ```
+      - setInterval：
+      ```
+      var num = 0;
+      var max = 10;
+      var intervalId = null;
+      
+      function incrementNumber() {
+         num++;
+         //如果执行次数达到了 max 设定的值，则取消后续尚未执行的调用 
+         if (num == max) {
+            clearInterval(intervalId);
+            alert("Done");
+         }
+      }
+      intervalId = setInterval(incrementNumber, 500);      
+      ```
+      
+   
+   
   
 
 
