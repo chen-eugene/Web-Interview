@@ -1,4 +1,4 @@
-目录：
+目录：    
 &emsp;[第一章 Vue实例](#第一章Vue实例)
 
 <br>
@@ -22,7 +22,28 @@
  - 销毁期间的生命周期函数：
   	+ beforeDestroy：实例销毁之前调用。在这一步，实例仍然完全可用。
   	+ destroyed：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。
+<br>
 
+#### 2、计算属性和方法的区别
+  ```
+  <p>Reversed message: "{{ reversedMessage() }}"</p>
+  
+  computed: {
+    // 计算属性的 getter
+    reversedMessage: function () {
+      // `this` 指向 vm 实例
+      return this.message.split('').reverse().join('')
+    }
+  }
+  
+  methods: {
+    reversedMessage: function () {
+      return this.message.split('').reverse().join('')
+    }
+  }
+  ```
+&emsp;&emsp;计算属性是基于它们的响应式依赖进行缓存的。只在相关响应式依赖发生改变时它们才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。
+<br>
 
 #### 2、组件化和模块化。
 
