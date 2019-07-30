@@ -100,8 +100,79 @@
   //绑定一个数组
   <div v-bind:style="[baseStyles, overridingStyles]"></div>
   ```
+<br>
 
+#### 4、组件之间元素的复用
+  ```
+  <template v-if="loginType === 'username'">
+    <label>Username</label>
+    <input placeholder="Enter your username" key="username-input">
+  </template>
+  <template v-else>
+    <label>Email</label>
+    <input placeholder="Enter your email address" key="email-input">
+  </template>
+  ```
+  在两个组件之间切换，如果不使用key，Vue 会尽可能高效地渲染元素，label和input将会被复用，仅仅替换掉palceholder。如果使用了key，那么这两个input元素将会完全独立，不会进行复用。
+<br>
 
+#### 5、v-if和v-show的区别。
+  
+  - v-if：
+    - v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
+    - v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
+    
+  - v-show：不管初始条件是什么，元素总是会被渲染，v-show 只是简单地切换元素的 CSS 属性 display。
+  
+&emsp;&emsp;v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。  
+<br>
+
+#### 6、v-for的使用
+  
+  - 遍历数组：
+  ```
+    //第二个参数index为可选参数，即当前项的索引
+    <li v-for="(item, index) in items">
+      {{ parentMessage }} - {{ index }} - {{ item.message }}
+    </li>
+    
+    data: {
+      parentMessage: 'Parent',
+      items: [
+        { message: 'Foo' },
+        { message: 'Bar' }
+      ]
+    }
+  ```
+  
+  - 遍历对象
+  ```
+  //第二个的参数为属性名（可选参数）
+  //第三个参数作为索引（可选参数）
+  <div v-for="(value, name, index) in object">
+    {{ index }}. {{ name }}: {{ value }}
+  </div>
+  
+  data: {
+    object: {
+      title: 'How to do lists in Vue',
+      author: 'Jane Doe',
+      publishedAt: '2016-04-10'
+    }
+  }
+  ```
+
+  - 使用key追踪元素：
+&emsp;&emsp;v-for 渲染的元素列表时，它默认使用“就地更新”的策略。简单来说，如果数据项的顺序被改变，Vue 将不会更改DOM元素的位置顺序，而是更新元素的内容。
+  
+&emsp;&emsp; 使用key，用于强制替换元素/组件而不是重复使用它。
+  ```
+  <div v-for="item in items" v-bind:key="item.id"></div>
+  ```
+  - v-for和v-if不在同一个元素上使用
+    - 为了过滤一个列表中的项目 (比如 `v-for="user in users" v-if="user.isActive"`)。在这种情形下，请将 users 替换为一个计算属性 (比如 activeUsers)，让其返回过滤后的列表。
+    - 为了避免渲染本应该被隐藏的列表 (比如 `v-for="user in users" v-if="shouldShowUsers"`)。这种情形下，请将 v-if 移动至容器元素上 (比如 ul, ol)。
+<br>
 
 #### 2、组件化和模块化。
 
