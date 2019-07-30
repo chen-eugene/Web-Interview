@@ -1,9 +1,9 @@
 目录：    
-&emsp;[第一章 Vue实例](#第一章Vue实例)
+&emsp;[第一章 Vue实例](#第一章Vue基础)
 
 <br>
 
-### 第一章Vue实例
+### 第一章Vue基础
 
 #### 1、Vue生命周期函数。
 
@@ -44,6 +44,63 @@
   ```
 &emsp;&emsp;计算属性是基于它们的响应式依赖进行缓存的。只在相关响应式依赖发生改变时它们才会重新求值。这就意味着只要 message 还没有发生改变，多次访问 reversedMessage 计算属性会立即返回之前的计算结果，而不必再次执行函数。
 <br>
+
+#### 3、绑定Class和Style
+
+&emsp;**绑定class**
+
+  - 传入对象
+  ```
+  //v-bind:class 指令也可以与普通的 class 属性共存
+  //如果 isActive = true; hasError = true，class 列表将变为 "static active text-danger"。
+  <div 
+    class="static"
+    v-bind:class="{ active: isActive, 'text-danger': hasError }"></div>
+  
+  //绑定的数据对象不必内联定义在模板里
+  //我们也可以在这里绑定一个返回对象的计算属性
+  <div v-bind:class="classObject"></div>
+  
+  data: {
+    classObject: {
+      active: true,
+      'text-danger': false
+    }
+  }
+  ```
+  
+  - 传入数组：
+  ```
+  <div v-bind:class="[activeClass, errorClass]"></div>
+  data: {
+    activeClass: 'active',
+    errorClass: 'text-danger'
+  }
+  
+  //可以使用三目运算符
+  <div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
+  
+  //可以在数组中添加对象
+  <div v-bind:class="[{ active: isActive }, errorClass]"></div>
+  ```
+
+&emsp;**绑定Style**
+
+  ```
+  <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+  data: {
+    activeColor: 'red',
+    fontSize: 30
+  }
+  
+  //绑定一个样式对象
+  <div v-bind:style="styleObject"></div>
+  
+  //绑定一个数组
+  <div v-bind:style="[baseStyles, overridingStyles]"></div>
+  ```
+
+
 
 #### 2、组件化和模块化。
 
