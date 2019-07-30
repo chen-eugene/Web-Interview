@@ -84,6 +84,7 @@
   <div v-bind:class="[{ active: isActive }, errorClass]"></div>
   ```
 <br>
+
 **绑定Style**
 
   ```
