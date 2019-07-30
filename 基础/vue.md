@@ -47,7 +47,7 @@
 
 #### 3、绑定Class和Style
 
-&emsp;**绑定class**
+**绑定class**
 
   - 传入对象
   ```
@@ -83,8 +83,8 @@
   //可以在数组中添加对象
   <div v-bind:class="[{ active: isActive }, errorClass]"></div>
   ```
-
-&emsp;**绑定Style**
+<br>
+**绑定Style**
 
   ```
   <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
