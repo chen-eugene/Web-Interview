@@ -1,5 +1,5 @@
 
-### [Vue项目结构](https://segmentfault.com/a/1190000012392160)
+#### [Vue项目结构](https://segmentfault.com/a/1190000012392160)
 
   - build 文件夹: 里面是对 webpack 开发和打包的相关设置，包括入口文件、输出文件、使用的模块等；
 
