@@ -167,7 +167,7 @@
   - 使用key追踪元素：
 &emsp;&emsp;v-for 渲染的元素列表时，它默认使用“就地更新”的策略。简单来说，如果数据项的顺序被改变，Vue 将不会更改DOM元素的位置顺序，而是更新元素的内容。
   
-&emsp;&emsp; 使用key，用于强制替换元素/组件而不是重复使用它。
+&emsp;&emsp;使用key，用于强制替换元素/组件而不是重复使用它。
   ```
   <div v-for="item in items" v-bind:key="item.id"></div>
   ```
@@ -182,7 +182,7 @@
 
 ### 第二章组件
 
-
+<br>
 
 #### 1、组件化和模块化。
 
@@ -239,6 +239,85 @@
     
    **一个组件的 data 选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝，这样做的目的是避免组件之间的数据保持独立，互不影响。**
 <br>
+   
+#### 4、组件Prop。
+   
+  - 父组件通过Prop向子组件传值。
+  ```
+  data():{
+    return {
+      post:{
+        id:{
+          type:Number,    //类型
+          required:true,  //是否必须
+          default:1       //默认值
+        },
+        title :'My Journery with Vue'，
+        obj:{
+          //传入一个对象
+          type:Object,
+          //对象或数组默认值必须从一个工厂函数获取
+          default:function(){
+            return { message:'hello' }
+          }
+        }，
+        fun:{
+          validator: function (value) {
+            // 这个值必须匹配下列字符串中的一个
+            return ['success', 'warning', 'danger'].indexOf(value) !== -1
+          }
+        }
+      }
+    }
+  }
+  
+  //通过Prop传入一个对象
+  <blog-post v-bind:post="post"></blog-post>
+  
+  //将post对象的所有属性作为Prop传入
+  <blog-post v-bind="post"></blog-post>
+  
+  //等价于将post的所有属性传入
+  <blog-post
+    v-bind:id="post.id"
+    v-bind:title="post.title"></blog-post>
+  ```
+  
+  - 单向数据流：父级 prop 的更新会向下流动到子组件中，但是反过来则不行
+  ```
+  //在子组件中对Prop传入的值进行转换，这种情况下最好使用计算属性
+  props: ['size'],
+  computed: {
+    normalizedSize: function () {
+      return this.size.trim().toLowerCase()
+    }
+  }
+  ```
+
+  - 父组件设置class和style不会覆盖子组件内部定义的class和style，会对class和style进行合并。
+   
+  - 父组件监听子组件事件
+  ```
+  //父组件通过v-on绑定事件，postFontSize += $event可以使用一个函数
+  //父组件通过$event来接收子组件抛出的值
+  <blog-post v-on:enlarge-text="postFontSize += $event"></blog-post>
+  
+  <blog-post v-on:enlarge-text="onEnlargeText"></blog-post>
+  methods: {
+    //那么这个值将会作为第一个参数传入这个方法
+    onEnlargeText: function (enlargeAmount) {
+      this.postFontSize += enlargeAmount
+    }
+  }
+  
+
+  //子组件内部通过条用$emit方法并传入事件名来触发事件
+  //子组件通过$emit来抛出一个值
+  <button v-on:click="$emit('enlarge-text',0.1)">Enlarge text</button>
+  ```
+  
+   
+   
    
 #### 4、什么是路由，前端路由和后端路由有什么区别。
 
