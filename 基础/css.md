@@ -50,6 +50,9 @@
 
 #### [3、CSS动画](https://www.cnblogs.com/smyhvae/p/8435182.html)
 
+#### [4、浮动布局](https://www.cnblogs.com/iyangyuan/archive/2013/03/27/2983813.html)
+
+
 #### 4、盒模型注意点。
 
   - inline:
