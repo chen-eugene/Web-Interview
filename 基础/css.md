@@ -66,7 +66,7 @@
   - block:
   <br>
 
-#### [5、弹性布局](https://juejin.im/post/5b0d6eab6fb9a009ea104bdd)
+#### [5、弹性布局](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
   
   - flex-direction　　容器内项目的排列方向(默认横向排列)　　
   - flex-wrap　　容器内项目换行方式
