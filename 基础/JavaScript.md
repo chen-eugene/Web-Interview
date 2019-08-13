@@ -554,6 +554,28 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
    ### 第十章DOM
    
    
+#### 1、DOM节点类型。
+   
+   - Node：JavaScript中的所有节点类型都继承 Node 类型，因此所有的节点都共享着相同的基本属性和方法。
+      - Node.ELEMENT_NODE(1)                          元素节点
+      - Node.ATTRIBUTE_NODE(2)                        属性节点
+      - Node.TEXT_NODE(3)                             文本节点
+      - Node.CDATA_SECTION_NODE(4)                    CDATA节点
+      - Node.ENTITY_REFERENCE_NODE(5)                 实体引用名称节点
+      - Node.ENTITY_NODE(6)                           实体名称节点
+      - Node.PROCESSING_INSTRUCTION_NODE(7)           处理指令节点
+      - Node.COMMENT_NODE(8)                          注释节点 
+      - Node.DOCUMENT_NODE(9)                         文档节点
+      - Node.DOCUMENT_TYPE_NODE(10)                   文档类型节点
+      - Node.DOCUMENT_FRAGMENT_NODE(11)               文档片段节点
+      - Node.NOTATION_NODE(12)                        DTD声明节点
+   
+   
+   
+   
+   
+   
+   
    
    
    
