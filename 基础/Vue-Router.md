@@ -7,6 +7,10 @@
 
 #### [2、主路由和子路由](https://blog.csdn.net/zgh0711/article/details/79716506)
 
+&nbsp;&nbsp;子路由的访问路径必须包含在主路由的路径下。
+
+
+
   
 
 
