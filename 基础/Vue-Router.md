@@ -4,6 +4,7 @@
   - 后端路由：对于普通的网站，所有的超链接都是URL地址，所有的URL地址都对应服务器上对应的资源。
   - [前端路由](https://www.cnblogs.com/joyho/articles/4430148.html)：对于单页面应用程序来说，主要通过URL中的hash来实现不同页面之间切换，同时，hash有一个特点，HTTP请求中不会包含hash相关的内容，所以，单页面程序中的页面跳转主要通过hash实现。**在单页面应用程序中，这种通过hash改变来切换页面的方式，称作前端路由。**
 <br>
+
 #### [2、主路由和子路由](https://blog.csdn.net/zgh0711/article/details/79716506)
 
   
