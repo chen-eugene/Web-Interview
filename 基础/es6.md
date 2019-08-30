@@ -17,3 +17,6 @@
     console.log(letTest); //输出"test let OK."，内部"{}"中声明的letTest和外部的letTest不是同一个变量
   }
   ```
+<br>
+
+
