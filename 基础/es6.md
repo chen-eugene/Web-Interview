@@ -41,6 +41,56 @@
   // 将 foo 指向另一个对象，就会报错
   foo = {}; // TypeError: "foo" is read-only
   ```
+  
+<br>
+
+#### 4、扩展运算符。
+  
+  - 合并数组：
+  ```
+  console.log(...[1, 2, 3])
+  // 1 2 3
+
+  console.log(1, ...[2, 3, 4], 5)
+  // 1 2 3 4 5
+
+  [...arr1, ...arr2, ...arr3]
+  // [ 'a', 'b', 'c', 'd', 'e' ]
+  ```
+<br>
+
+#### 5、对象属性的遍历。
+
+  - `for...in`：循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）
+  
+  - `Object.keys(obj)`：返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名
+  
+  - `Object.getOwnPropertyNames(obj)`：返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名
+  
+  - `Object.getOwnPropertySymbols(obj)`：返回一个数组，包含对象自身的所有 Symbol 属性的键名
+  
+  - `Reflect.ownKeys(obj)`：返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
