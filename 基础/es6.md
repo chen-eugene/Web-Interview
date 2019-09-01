@@ -99,6 +99,36 @@
 
 <br>
 
+#### 7、Promise：异步编程的一种解决方案。
+
+  - 对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）
+  
+  - 一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：从pending变为fulfilled和从pending变为rejected。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果，这时就称为 resolved（已定型）。如果改变已经发生了，你再对Promise对象添加回调函数，也会立即得到这个结果。
+
+&emsp;&emsp;ES6以前的异步回调：
+  ```
+  //最原始的写法-同步写法
+
+  f1(); //耗时很长，严重堵塞
+  f2(); 
+  f3(); //导致f3执行受到影响
+
+
+  //改进版-异步写法
+  function f1(callback){
+　 　setTimeout(function () {
+　 　　　// f1的任务代码
+　 　　　callback();
+　 　}, 1000);
+  }
+
+  f1(f2); //
+
+  f3();
+  ```
+  
+  
+
 
 
 
