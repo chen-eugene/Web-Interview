@@ -57,6 +57,24 @@
   [...arr1, ...arr2, ...arr3]
   // [ 'a', 'b', 'c', 'd', 'e' ]
   ```
+  
+  - 对象的扩展：对象的扩展运算符（...）用于取出参数对象的所有可遍历属性，拷贝到当前对象之中。
+  ```
+  {...{}, a: 1}
+  // { a: 1 }
+  let aWithOverrides = { ...a, x: 1, y: 2 };
+  // 等同于
+  let aWithOverrides = { ...a, ...{ x: 1, y: 2 } };
+  // 等同于
+  let x = 1, y = 2, aWithOverrides = { ...a, x, y };
+  // 等同于
+  let aWithOverrides = Object.assign({}, a, { x: 1, y: 2 });
+  ```
+  
+  
+  
+  
+  
 <br>
 
 #### 5、对象属性的遍历。
