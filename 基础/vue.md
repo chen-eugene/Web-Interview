@@ -324,7 +324,13 @@
   <button v-on:click="$emit('enlarge-text',0.1)">Enlarge text</button>
   ```
   
-   
+<br>
+
+#### 5、Vue渲染函数和JSX
+
+  
+
+
    
    
 
