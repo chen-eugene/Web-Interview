@@ -39,7 +39,7 @@
   - E:empty:               匹配一个不包含任何子元素的元素，注意，文本节点也被看作子元素。
   - E:not(s):              匹配不符合当前选择器的任何元素。
   - E:target:              匹配文档中特定"id"点击后的效果。
-
+<br>
 
 
 #### [2、CSS相对布局和绝对布局。](https://blog.csdn.net/gnail_oug/article/details/77564684)
@@ -47,8 +47,17 @@
   - absolute：使元素绝对定位，相对于static定位以外的最近的一个祖先元素进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。
   - relative：使元素相对定位，相对于自己的正常位置进行定位。
   - flex：使元素绝对定位，相对于浏览器窗口进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。
+<br>
 
 #### [3、CSS动画](https://www.cnblogs.com/smyhvae/p/8435182.html)
+
+  - transition：补间动画，元素不同状态间的平滑过渡。
+  
+  - transform：转换动画，可以实现元素的位移、旋转、变形、缩放。
+   - transform: scale(x, y);  缩放；x：表示水平方向的缩放倍数。y：表示垂直方向的缩放倍数。如果只写一个值就是等比例缩放。
+   - transform: translate(水平位移, 垂直位移);
+   - 
+
 
 #### [4、浮动布局](https://www.cnblogs.com/iyangyuan/archive/2013/03/27/2983813.html)
 
