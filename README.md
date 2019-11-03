@@ -27,7 +27,7 @@
   
   ### [CSS命名规范](https://github.com/chen-eugene/Web-Interview/blob/master/%E5%9F%BA%E7%A1%80/css%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.md)
   
-  ### [JavaScript](https://github.com/chen-eugene/Web-Interview/blob/master/%E5%9F%BA%E7%A1%80/JavaScript.md)
+  ### [JavaScript高级编程](https://github.com/chen-eugene/Web-Interview/blob/master/%E5%9F%BA%E7%A1%80/JavaScript.md)
   
   ### [ES6](https://github.com/chen-eugene/Web-Interview/blob/master/%E5%9F%BA%E7%A1%80/es6.md)
   
