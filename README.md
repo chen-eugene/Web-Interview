@@ -15,6 +15,11 @@
     <td>vue练习项目</td>
     <td><a href="https://github.com/bailicangdu/vue2-elm">https://github.com/bailicangdu/vue2-elm</a></td>
   </tr>
+  <tr>
+    <td>react-pxq</td>
+    <td>react练习项目</td>
+    <td><a href="https://github.com/bailicangdu/react-pxq">https://github.com/bailicangdu/react-pxq</a></td>
+  </tr>
 </table>
 
 
