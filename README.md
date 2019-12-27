@@ -25,8 +25,8 @@
   #### [Html](https://github.com/chen-eugene/Web-Interview/blob/master/package/html/Html.md)
   
   #### CSS
-    * [css命名规范](https://github.com/chen-eugene/Web-Interview/blob/master/package/css/css%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.md)
-    * [css](https://github.com/chen-eugene/Web-Interview/blob/master/package/css/css.md)
+   * [css命名规范](https://github.com/chen-eugene/Web-Interview/blob/master/package/css/css%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.md)
+   * [css](https://github.com/chen-eugene/Web-Interview/blob/master/package/css/css.md)
   
   #### [CSS命名规范](https://github.com/chen-eugene/Web-Interview/blob/master/%E5%9F%BA%E7%A1%80/css%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83.md)
   
