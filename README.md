@@ -3,22 +3,18 @@
   <tr>
     <th>项目</th>
     <th>介绍</th>
-    <th>链接</th>
   </tr>
   <tr>
-    <td>vue2-elm</td>
+    <td><a href="https://github.com/bailicangdu/vue2-elm">vue2-elm</a></td>
     <td>vue练习项目</td>
-    <td><a href="https://github.com/bailicangdu/vue2-elm">https://github.com/bailicangdu/vue2-elm</a></td>
   </tr>
   <tr>
-    <td>vue2-element-touzi-admin</td>
+    <td><a href="https://github.com/wdlhao/vue2-element-touzi-admin?utm_source=gold_browser_extension">vue2-element-touzi-admin</a></td>
     <td>vue练习项目</td>
-    <td><a href="https://github.com/wdlhao/vue2-element-touzi-admin?utm_source=gold_browser_extension">https://github.com/wdlhao/vue2-element-touzi-admin?utm_source=gold_browser_extension</a></td>
   </tr>
   <tr>
-    <td>react-pxq</td>
+    <td><a href="https://github.com/bailicangdu/react-pxq">react-pxq</a></td>
     <td>react练习项目</td>
-    <td><a href="https://github.com/bailicangdu/react-pxq">https://github.com/bailicangdu/react-pxq</a></td>
   </tr>
 </table>
 
