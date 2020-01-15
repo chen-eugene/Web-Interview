@@ -414,6 +414,8 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
 
 #### [2、this关键字的指向问题。](https://www.ibm.com/developerworks/cn/web/1207_wangqf_jsthis/index.html)
 
+  [JavaScript的this原理。](http://www.ruanyifeng.com/blog/2018/06/javascript-this.html)
+   
   - 作为对象方法：指向当前对象
   ```
   var point = { 
@@ -471,9 +473,6 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
   ```
 <br>
 
-#### [2、JavaScript的this原理。](http://www.ruanyifeng.com/blog/2018/06/javascript-this.html)
-<br>
-
 #### 3、window对象
 
 &emsp;&emsp;BOM的核心对象是 window，表示浏览器的一个实例。它既是通过 JavaScript 访问浏览器的一个接口，又是 ECMAScript 规定的 Global 对象。这就意味着在网页中定义的任何一个对象、变量和函数，都以 window 作为其 Global 对象。
@@ -518,7 +517,36 @@ JSON（JavaScript对象记法），它是一种用于描述文件和数组的记
       - prompt()：提示框中除了显示 OK 和 Cancel 按钮之外，还会显示一个文本输入域，以供用户在其中输入内容
 <br>
 
-#### 4、location对象
+#### [4、闭包](https://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html)
+
+   - 定义：闭包就是能够读取其他函数内部变量的函数。由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成"定义在一个函数内部的函数"。所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
+   
+   - 用途：一个是可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。
+   
+   ```
+   function createFunctions(){ var result = new Array();
+      for (var i=0; i < 10; i++){ result[i] = function(){
+         return i; };
+      }
+      return result;
+   }
+   //表面上看，似乎每个函数都应该返自己的索引值，即位置 0 的函数 返回 0，位置 1 的函数返回 1，以此类推。但实际上，每个函数都返回 10。因为每个函数的作用域链中 都保存着 createFunctions()函数的活动对象，所以它们引用的都是同一个变量 i。当 createFunctions()函数返回后，变量 i 的值是 10，此时每个函数都引用着保存变量 i 的同一个变量 对象，所以在每个函数内部 i 的值都是 10。
+   
+   function createFunctions(){ var result = new Array();
+      for (var i=0; i < 10; i++){
+         result[i] = function(num){
+            return function(){
+               return num;
+            };
+         }(i);
+      return result;
+   }
+   //我们没有直接把闭包赋值给数组，而是定义了一个匿名函数，并将立即执行该匿名函数的结果赋 给数组。这里的匿名函数有一个参数 num，也就是最终的函数要返回的值。
+   ```
+
+<br>
+
+#### 5、location对象
       
 &emsp;&emsp;**每次修改 location 的属性(hash 除外)，页面都会以新 URL 重新加载。**
       
